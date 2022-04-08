@@ -23,22 +23,28 @@ a {color: #333}
 h2 {
   font-size: 18px;
 }
+.flex {
+  display: flex;
+}
+.column {
+  flex-direction: column;
+}
+.row {
+  flex-direction: row;
+}
+.navleft, .navbar,.box2header { justify-content: space-between;}
+.navright, .article { justify-content: space-around;}
    /* Navigation */
 .navbar {
     width: 100%;
     background-color: #f2f2f2;
-    display: flex;
-    justify-content: space-between;
     align-content: center;
     margin-top: 10px;
     padding: 5px;
     }
 .navleft, .navright {
        width: 20%;
-       display: flex;
      }
-.navleft { justify-content: space-between;}
-.navright { justify-content: space-around;}
 .ball {
        width: 10px;
        height: 10px;
@@ -52,6 +58,9 @@ h2 {
        font-size: 18px;
        color: #b3c6ff;
    }
+.list {
+  display: none;
+}
 /* Sections */
 .box1 {
     width: 98%;
@@ -98,21 +107,13 @@ h2 {
     right: 130px;
     color: #808080;
 }
-.section2 {
-  display: flex;
-  flex-direction: row;
-}
 .box2 {
   width: 70%;
-  display: flex;
-  flex-direction: column;
   flex-wrap: wrap;
   background-color: #e6e6e6;
   margin: 10px 10px;
 }
 .box2header {
-  display: flex;
-  justify-content: space-between;
   padding: 20px 10px;
 }
 .date {
@@ -121,9 +122,7 @@ h2 {
   opacity: 70%;
 }
 .article {
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 .article img {
   width: 100px;
@@ -141,8 +140,6 @@ h2 {
 }
 .box3 {
   width: 40%;
-  display: flex;
-  flex-direction: column;
   flex-wrap: wrap;
   position: relative;
   background-color: #e6e6e6;
@@ -169,9 +166,7 @@ h2 {
 }
 .headercontent {
   width: 70%;
-  display: flex;
   justify-content: space-evenly;
-  flex-direction: row;
   margin-bottom: 10px;
 }
 .circle {
@@ -194,7 +189,6 @@ h2 {
 
 @media (max-width: 768px){
   .section2 {
-    display: flex;
     flex-direction: column;
   }
   .box2, .box3 {
@@ -204,4 +198,37 @@ h2 {
   .navleft, .navright {
     width: 50%;
   }
+}
+@media (max-width: 360px){
+  .navleft {
+    width: 70%;
+  }
+  .secondbox h2 {
+    margin-bottom: 5px;
+  }
+  .list {
+    display: block;
+  }
+  .navright {
+    display: none;
+  }
+  .line {
+    display: block;
+    width: 20px;
+    height: 3px;
+    background-color: #808080;
+    margin: 3px;
+  }
+}
+@media (max-width: 280px){
+  .navleft  a, .navright a {
+   font-size: 14px;
+  }
+  .secondbox h2 {
+    margin-bottom: 2px;
+  }
+  .date {
+    font-size: 12px;
+  }
+  h2, .article, .content2text1 { font-size: 15px;}
 }
