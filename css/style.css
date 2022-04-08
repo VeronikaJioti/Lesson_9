@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
 * {
   font-family: 'Josefin Sans', sans-serif;
   color: #333;
@@ -15,6 +22,8 @@ a {color: #333}
   padding: 3px;
   border-radius: 20px;
   opacity: 80%;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .btn:hover {
@@ -24,21 +33,30 @@ h2 {
   font-size: 18px;
 }
 .flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 .column {
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 .row {
-  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
-.navleft, .navbar,.box2header { justify-content: space-between;}
-.navright, .article { justify-content: space-around;}
+.navleft, .navbar,.box2header { -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between;}
+.navright, .article { -ms-flex-pack: distribute; justify-content: space-around;}
    /* Navigation */
 .navbar {
     width: 100%;
     background-color: #f2f2f2;
-    align-content: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
     margin-top: 10px;
     padding: 5px;
     }
@@ -52,6 +70,8 @@ h2 {
        border-radius: 50%;
    }
 .navleft a, .navright  a {
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
     transition: all 0.5s;
    }
 .navbar a:hover {
@@ -109,7 +129,8 @@ h2 {
 }
 .box2 {
   width: 70%;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   background-color: #e6e6e6;
   margin: 10px 10px;
 }
@@ -140,7 +161,8 @@ h2 {
 }
 .box3 {
   width: 40%;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   position: relative;
   background-color: #e6e6e6;
   margin: 10px 10px;
@@ -166,7 +188,9 @@ h2 {
 }
 .headercontent {
   width: 70%;
-  justify-content: space-evenly;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   margin-bottom: 10px;
 }
 .circle {
@@ -189,7 +213,10 @@ h2 {
 
 @media (max-width: 768px){
   .section2 {
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
   .box2, .box3 {
     width: 97%;
